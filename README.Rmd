@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # vindecodr
 
 <!-- badges: start -->
+[![Travis build status](https://travis-ci.com/burch-cm/vindecodr.svg?branch=master)](https://travis-ci.com/burch-cm/vindecodr)
 <!-- badges: end -->
 
 The goal of vindecodr is to provide an efficient programmatic interface to the 
