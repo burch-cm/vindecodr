@@ -4,18 +4,20 @@
 \alias{check_vin_format}
 \title{Check VIN Length and Characters}
 \usage{
-check_vin_format(vin)
+check_vin_format(vin, check_chars = FALSE)
 }
 \arguments{
 \item{vin}{A character. Should be a properly formatted Vehicle Identification Number.
 Wildcards (e.g., '*') are acceptable.}
+
+\item{check_chars}{Logical. Should an error be thrown if the VIN contains illegal characters?}
 }
 \value{
-Logical. TRUE if the VIN is 17 chars and does not contain \verb{[IOQ]}, FALSE otherwise.
+Logical.
 }
 \description{
-Checks that VINs are 17 characters long and do not include any prohibited characters
-(I, O, Q).
+Checks that VINs are 17 characters long and will optionally check that disapllowed
+characters (I, O, Q) are not present.
 }
 \examples{
 # Random VIN

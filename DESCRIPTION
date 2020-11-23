@@ -20,7 +20,9 @@ LazyData: true
 Depends:
     R (>= 4.0.0)
 Imports: 
-    purrr,
     httr
+Suggests:
+    purrr,
+    stringr
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1

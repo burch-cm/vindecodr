@@ -1,12 +1,13 @@
 #' Check VIN Length and Characters
 #'
-#' Checks that VINs are 17 characters long and do not include any prohibited characters
-#' (I, O, Q).
+#' Checks that VINs are 17 characters long and will optionally check that disapllowed
+#' characters (I, O, Q) are not present.
 #'
 #' @param vin A character. Should be a properly formatted Vehicle Identification Number.
 #'   Wildcards (e.g., '*') are acceptable.
+#' @param check_chars Logical. Should an error be thrown if the VIN contains illegal characters?
 #'
-#' @return Logical. TRUE if the VIN is 17 chars and does not contain `[IOQ]`, FALSE otherwise.
+#' @return Logical.
 #' @export
 #'
 #' @examples
@@ -14,7 +15,7 @@
 #' check_vin_format("3VWLL7AJ9BM053541")
 #' # With wild card
 #' check_vin_format("3VWLL7AJ9BM*53541")
-check_vin_format <- function(vin) {
+check_vin_format <- function(vin, check_chars = FALSE) {
     vin <- toupper(vin)
     # verify VIN is 17 characters long
     if (nchar(vin) != 17) {
@@ -26,15 +27,18 @@ check_vin_format <- function(vin) {
         stop(msg)
     }
     # check for illegal chars
-    if (grepl("[IOQ]", vin)) {
-        chars <- unlist(strsplit(vin, ''))
-        pos <- which(chars %in% c("I", "O", "Q"))
-        msg <- paste("In VIN ", vin, ", disallowed character detected at position",
-                     as.character(pos),
-                     ":",
-                     chars[pos],
-                     "\n")
-        stop(msg)
+    if (check_chars) {
+        if (grepl("[IOQ]", vin)) {
+            chars <- unlist(strsplit(vin, ''))
+            pos <- which(chars %in% c("I", "O", "Q"))
+            msg <- paste("In VIN ", vin, ", disallowed character detected at position",
+                         as.character(pos),
+                         ":",
+                         chars[pos],
+                         "\n")
+            stop(msg)
+        }
     }
+
     return(TRUE)
 }
