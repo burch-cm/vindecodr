@@ -1,6 +1,6 @@
 Package: vindecodr
 Title: Provides an Interface to the Department of Transportation VIN Decoder
-Version: 0.1.0
+Version: 0.1.1
 Authors@R:
     person(given = "Christopher",
            family = "Burch",
@@ -12,7 +12,7 @@ Description: Provides a programmatic interface in R for the US Department of
     (NHTSA) vehicle identification number (VIN) API, located at 
     <https://vpic.nhtsa.dot.gov/api/>. 
     The API can decode up to 50 vehicle identification numbers in one call, and 
-    provides manufacturer information about the vehicles, inlcuding make, model, 
+    provides manufacturer information about the vehicles, including make, model, 
     model year, and gross vehicle weight rating (GVWR).
 License: MIT + file LICENSE
 Encoding: UTF-8

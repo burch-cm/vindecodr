@@ -2,7 +2,7 @@
 #'
 #' @description
 #'
-#'  A family of functions to build urls for the National Highway Transpoprtation
+#'  A family of functions to build URLs for the National Highway Transportation
 #'  Safety Administration (NHTSA) vehicle identification number (VIN) decoder API.
 #'
 #' The `build_nhtsa_url()` function returns a closure containing the appropriate

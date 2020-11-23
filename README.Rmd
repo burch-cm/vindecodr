@@ -13,15 +13,17 @@ knitr::opts_chunk$set(
 )
 ```
 
-# vindecodr
+# vindecodr  ![vindecodr](man/figures/sticker-small.png)
 
 <!-- badges: start -->
-[![Travis build status](https://travis-ci.com/burch-cm/vindecodr.svg?branch=master)](https://travis-ci.com/burch-cm/vindecodr)
+[![CRAN status badge](https://www.r-pkg.org/badges/version/vindecodr)](https://cran.r-project.org/package=vindecodr)
+[![Travis build status](https://travis-ci.com/burch-cm/vindecodr.svg?branch=main)](https://travis-ci.com/burch-cm/vindecodr)
 <!-- badges: end -->
 
-The goal of vindecodr is to provide an efficient programmatic interface to the 
+The goal of vindecodr (pronounced "VIN decoder") is to provide an efficient 
+programmatic interface to the 
 US Department of Transportation (DOT) National Highway Transportation Safety 
-Adminstration (NHTSA) vehicle identification number (VIN) decoder API, located at 
+Administration (NHTSA) vehicle identification number (VIN) decoder API, located at 
 [https://vpic.nhtsa.dot.gov/api/](https://vpic.nhtsa.dot.gov/api/).
 
 ## Installation

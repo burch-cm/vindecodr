@@ -3,5 +3,6 @@
 export(build_nhtsa_url)
 export(build_vin_batch_url)
 export(build_vin_url)
+export(check_digit_valid)
 export(check_vin_format)
 export(decode_vin)
