@@ -24,10 +24,10 @@ check_vin <- function(vin, guess = FALSE) {
 #' @inheritParams check_vin
 check_vin_purrr <- function(vin, guess = FALSE) {
     # check for length
-    purrr::map_lgl(vin, check_vin_format, check_chars = !guess)
+    purrr::map_lgl(vin, valid_vin_format, check_chars = !guess)
 
     # validate the check digit
-    val <- purrr::map_lgl(vin, check_digit_valid, guess = guess)
+    val <- purrr::map_lgl(vin, valid_check_digit, guess = guess)
     return(val)
 }
 
@@ -38,13 +38,13 @@ check_vin_no_purrr <- function(vin, guess = FALSE) {
     # check lengths
     len_ok <- c()
     for (v in vin) {
-        len_ok <- append(len_ok, check_vin_format(v, check_chars = !guess))
+        len_ok <- append(len_ok, valid_vin_format(v, check_chars = !guess))
     }
 
     # validate the check digit
     res <- c()
     for (v in vin) {
-        res <- append(res, check_digit_valid(v, guess = guess))
+        res <- append(res, valid_check_digit(v, guess = guess))
     }
     return(res)
 }

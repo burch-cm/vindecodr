@@ -14,14 +14,14 @@
 #'     Q -> 0
 #'
 #' @return If `value` is `FALSE`, a logical value is returned.
-#'     If `value` is `TRUE`, a character calue is returned.
+#'     If `value` is `TRUE`, a character is returned.
 #' @export
 #'
 #' @examples
-#' check_digit_valid("WDBEA30D3HA391172") # True
-#' check_digit_valid("WDBEA30D3HA391172", value = TRUE)
-#' check_digit_valid("WDBEA3QD3HA39I172", guess = TRUE)
-check_digit_valid <- function(vin, value = FALSE, guess = FALSE) {
+#' valid_check_digit("WDBEA30D3HA391172") # True
+#' valid_check_digit("WDBEA30D3HA391172", value = TRUE)
+#' valid_check_digit("WDBEA3QD3HA39I172", guess = TRUE)
+valid_check_digit <- function(vin, value = FALSE, guess = FALSE) {
 
     vin_letters <- strsplit(toupper(vin), "")[[1]]
     chk_dgt <- vin_letters[9]

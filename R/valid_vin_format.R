@@ -1,6 +1,6 @@
 #' Check VIN Length and Characters
 #'
-#' Checks that VINs are 17 characters long and will optionally check that disapllowed
+#' Checks that VINs are 17 characters long and will optionally check that disallowed
 #' characters (I, O, Q) are not present.
 #'
 #' @param vin A character. Should be a properly formatted Vehicle Identification Number.
@@ -12,10 +12,10 @@
 #'
 #' @examples
 #' # Random VIN
-#' check_vin_format("3VWLL7AJ9BM053541")
+#' valid_vin_format("3VWLL7AJ9BM053541")
 #' # With wild card
-#' check_vin_format("3VWLL7AJ9BM*53541")
-check_vin_format <- function(vin, check_chars = FALSE) {
+#' valid_vin_format("3VWLL7AJ9BM*53541")
+valid_vin_format <- function(vin, check_chars = FALSE) {
     vin <- toupper(vin)
     # verify VIN is 17 characters long
     if (nchar(vin) != 17) {
